@@ -48,10 +48,13 @@ Add-migration identityMigration   & update-database
 <h2>JWTAuthentication:</h2>
 
 -json web tokent is a secure way to transmit data between two parties and it consists of three basic parts header,payload,signature; i will use it to implement the Authentication.
+
 -first i install this library Microsoft.AspNetCore.Authentication.JwtBearer
 
 -then i configure the jwtsetting in appsetting.json,then i Register the AddAuthentication middleware see(ConfigureJwt)method in ExtensionsMethods class then i add it in program class.
--then to protect endpoints we should write [Authorize] over it  and the the client should be authorized to get the response.
+
+-then to protect endpoints we should write [Authorize] or [Role("role")] if we want to authorize for just specific role 
+over it  and the the client should be authorized to get the response.
 
 -then we should implement the method that authenticate the client , i will create userforAuthenticationDto and then i will create the service that authenticate this client...! see AutheticationService class.
 
